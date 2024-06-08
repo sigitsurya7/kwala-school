@@ -22,49 +22,47 @@ const BeritaBlog = () => {
         },
     ]
     return(
-        <>
-            <div className="flex flex-col gap-4" id="berita">
-                <div className="flex flex-col justify-center items-center gap-2">
-                    <span className="font-bold text-4xl underline underline-offset-4">Berita</span>
-                    <span className="font-bold text-2xl">KWALA SCHOOL</span>
-                </div>
-                <div className="flex flex-col justify-center items-center">
-                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 p-8 w-max">
-                        {
-                            galeri.map((item, index) => {
-                                return(
-                                    <div key={index} class="w-44 lg:w-80 h-full border-black border-2 rounded-md hover:shadow-[8px_8px_0px_rgba(0,0,0,1)] bg-white">
-                                        <a href="" class="block cursor-pointer">
-                                            <article class="w-full h-full">
-                                                <figure class="w-full h-1/2 border-black border-b-2">
-                                                    <LazyImage styleClass={'w-full h-full object-cover'} src={item.link} alt={`Blog_Kwala-${index}`} />
-                                                </figure>
-                                                <div class="px-6 py-5 text-left h-full">
-                                                    <p class="text-base mb-4">May 15th, 2023</p>
-                                                    <h1 class="lg:text-[32px] text-[19px] mb-4">Neo Brutallism</h1>
-                                                    <p class="text-xs mb-4 line-clamp-4">
-                                                    Neobrutalism is an aesthetic characterized by high contrast
-                                                    elements, bright colors, and bold shapes. It is often used to make
-                                                    a statement, as it is meant to be eye-catching and stand out to
-                                                    the viewer. It is also used in user interface and web design, with
-                                                    features such as vibrant colors and bold shapes. Neobrutalism can
-                                                    also be used in print design, with an example being a bold shape
-                                                    with a vibrant color fill applied to it.
-                                                    </p>
-                                                    <strong>Read More</strong>
-                                                </div>
-                                            </article>
-                                        </a>
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-
-                    <button className="h-12 font-semibold border-black border-2 p-2.5 bg-green-400 hover:bg-green-300 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-green-300">Lihat Selengkapnya</button>
-                </div>
+        <div className="flex flex-col gap-4" id="berita">
+            <div className="flex flex-col justify-center items-center gap-2">
+                <span className="font-bold text-4xl underline underline-offset-4">Berita</span>
+                <span className="font-bold text-2xl">KWALA SCHOOL</span>
             </div>
-        </>
+            <div className="flex flex-col justify-center items-center">
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 p-8 w-max">
+                    {
+                        galeri.map((item, index) => {
+                            return(
+                                <div key={index} class="w-36 lg:w-80 h-full border-black border-2 rounded-md hover:shadow-[8px_8px_0px_rgba(0,0,0,1)] bg-white">
+                                    <a href="" class="block cursor-pointer">
+                                        <article class="w-full h-full">
+                                            <figure class="w-full h-1/2 border-black border-b-2">
+                                                <LazyImage styleClass={'w-full h-full object-cover'} src={item.link} alt={`Blog_Kwala-${index}`} />
+                                            </figure>
+                                            <div class="px-6 py-5 text-left h-full">
+                                                <p class="text-base mb-4">May 15th, 2023</p>
+                                                <h1 class="lg:text-[32px] text-[19px] mb-4">Neo Brutallism</h1>
+                                                <p class="text-xs mb-4 line-clamp-4">
+                                                Neobrutalism is an aesthetic characterized by high contrast
+                                                elements, bright colors, and bold shapes. It is often used to make
+                                                a statement, as it is meant to be eye-catching and stand out to
+                                                the viewer. It is also used in user interface and web design, with
+                                                features such as vibrant colors and bold shapes. Neobrutalism can
+                                                also be used in print design, with an example being a bold shape
+                                                with a vibrant color fill applied to it.
+                                                </p>
+                                                <strong>Read More</strong>
+                                            </div>
+                                        </article>
+                                    </a>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+
+                <button className="h-12 font-semibold border-black border-2 p-2.5 bg-green-400 hover:bg-green-300 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-green-300">Lihat Selengkapnya</button>
+            </div>
+        </div>
     )
 }
 
