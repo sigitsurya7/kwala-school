@@ -45,9 +45,11 @@ const BannerBlog = () => {
                     {
                         gambar.map((item, index) => {
                             return(
-                                <figure key={index} className="border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)]">
-                                    <LazyImage styleClass={'object-cover w-full h-full'} src={item.link} alt={`banner_Kwala-${index}`} />
-                                </figure>
+                                <div className="p-4">
+                                    <figure key={index} className="w-full h-full rounded-lg border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)]">
+                                        <LazyImage styleClass={'object-cover w-full h-full'} src={item.link} alt={`banner_Kwala-${index}`} />
+                                    </figure>
+                                </div>
                             )
                         })
                     }

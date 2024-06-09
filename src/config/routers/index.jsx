@@ -1,5 +1,6 @@
 // CSS
 import '../../assets/css/tailwind.css'
+import '../../assets/css/style.css'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 // React-Router-Dom

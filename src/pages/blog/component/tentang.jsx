@@ -113,29 +113,29 @@ const TentangBlog = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-3">
+            <div className="grid grid-cols-3 items-center">
                 <div className="col-span-3 lg:col-span-1 p-8">
-                    <figure class="w-full h-96 border-black border-2">
-                        <LazyImage styleClass={'w-full h-full object-cover shadow-[8px_8px_0px_rgba(0,0,0,1)]'} src={'https://images.unsplash.com/photo-1613896527026-f195d5c818ed?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2Nob29sJTIwYnVpbGRpbmd8ZW58MHx8MHx8fDA%3D'} />
+                    <figure class="w-full h-96">
+                        <LazyImage styleClass={'w-full h-full rounded-lg border-4 border-black object-cover shadow-[8px_8px_0px_rgba(0,0,0,1)]'} src={'https://images.unsplash.com/photo-1613896527026-f195d5c818ed?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2Nob29sJTIwYnVpbGRpbmd8ZW58MHx8MHx8fDA%3D'} />
                     </figure>
                 </div>
 
                 <div className="col-span-3 lg:col-span-2 p-8">
                     <p className="font-bold text-center text-xl uppercase mb-8">program sekolah</p>
-                    <ul>
-                        {
-                            programUnggulan.map((item, index) => {
-                                return(
-                                    <li key={index} className="mb-4 leading-relaxed flex">
-                                        <p className="ml-2 -mt-1.5 align-top">
-                                            <strong>{item.nama} : </strong> 
-                                            {item.deskripsi}
-                                        </p>
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
+                    {
+                        programUnggulan.map((item, index) => {
+                            return(
+                                <div key={index} tabIndex={index} className="collapse border-2 border-black hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] my-3"> 
+                                    <div className="collapse-title text-xl font-medium">
+                                        {item.nama}
+                                    </div>
+                                    <div className="collapse-content"> 
+                                        <p>{item.deskripsi}</p>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </div>
         </div>

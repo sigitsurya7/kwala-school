@@ -2,19 +2,103 @@ import { useState } from "react";
 import FormBiodata from "./form/formBiodata";
 import Account from "./form/akun";
 
-const FinishDaftar = () => {
-    return(
-        <>
-            <p className="font-bold text-center">Pastikan data yang kamu isi benar ya :)</p>
-        </>
-    )
+const formData = {
+    namaLengkap: '',
+    nisn: '',
+    tempatLahir: '',
+    tanggalLahir: '',
+    jenisKelamin: '',
+    agama: '',
+    jarak: '',
+    caraBerangkat: '',
+    asalSekolah: '',
+    noHandphone: '',
+    email: '',
+    password: ''
 }
 
+
 const DaftarSekolah = () => {
+    const FinishDaftar = () => {
+        return(
+            <>
+                <p className="font-bold text-center">Pastikan data yang kamu isi benar ya :)</p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <table className="w-full">
+                        <tr>
+                            <td className="font-bold">Nama Lengkap </td>
+                            <td>:</td>
+                            <td>{state.namaLengkap ? state.namaLengkap : '-'}</td>
+                        </tr>
+                        <tr>
+                            <td className="font-bold">NISN </td>
+                            <td>:</td>
+                            <td>{state.nisn ? state.nisn : '-'}</td>
+                        </tr>
+                        <tr>
+                            <td className="font-bold">Tempat Lahir </td>
+                            <td>:</td>
+                            <td>{state.tempatLahir ? state.tempatLahir : '-'}</td>
+                        </tr>
+                        <tr>
+                            <td className="font-bold">Tanggal Lahir </td>
+                            <td>:</td>
+                            <td>{state.tanggalLahir ? state.tanggalLahir : '-'}</td>
+                        </tr>
+                        <tr>
+                            <td className="font-bold">Jenis Kelamin </td>
+                            <td>:</td>
+                            <td>{state.jenisKelamin ? state.jenisKelamin : '-'}</td>
+                        </tr>
+                        <tr>
+                            <td className="font-bold">Agama </td>
+                            <td>:</td>
+                            <td>{state.agama ? state.agama : '-'}</td>
+                        </tr>
+                    </table>
+                    <table className="w-full">
+                        <tr>
+                            <td className="font-bold">Jarak </td>
+                            <td>:</td>
+                            <td>{state.jarak ? state.jarak : '-'}</td>
+                        </tr>
+                        <tr>
+                            <td className="font-bold">Cara Berangkat </td>
+                            <td>:</td>
+                            <td>{state.caraBerangkat ? state.caraBerangkat : '-'}</td>
+                        </tr>
+                        <tr>
+                            <td className="font-bold">Asal Sekolah </td>
+                            <td>:</td>
+                            <td>{state.asalSekolah ? state.asalSekolah.label : '-'}</td>
+                        </tr>
+                        <tr>
+                            <td className="font-bold">No Handphone </td>
+                            <td>:</td>
+                            <td>{state.noHandphone ? state.noHandphone : '-'}</td>
+                        </tr>
+                        <tr>
+                            <td className="font-bold">Email </td>
+                            <td>:</td>
+                            <td>{state.email ? state.email : '-'}</td>
+                        </tr>
+                        <tr>
+                            <td className="font-bold">Password </td>
+                            <td>:</td>
+                            <td>{state.password ? state.password : '-'}</td>
+                        </tr>
+                    </table>
+                </div>
+            </>
+        )
+    }
 
     const [step, setStep] = useState(1);
     const nextStep = () => setStep(step + 1);
     const prevStep = () => setStep(step - 1);
+
+    const [ state, setState ] = useState(formData)
 
     return(
         <div className="pt-20 mb-20">
@@ -31,8 +115,8 @@ const DaftarSekolah = () => {
 
                 <p className="font-bold text-xl text-center uppercase">{step == 1 ? 'biodata' : step == 2 ? 'akun' : 'simpan' }</p>
 
-                {step === 1 && <FormBiodata />}
-                {step === 2 && <Account />}
+                {step === 1 && <FormBiodata formData={state} setFormData={setState} />}
+                {step === 2 && <Account formData={state} setFormData={setState} />}
                 {step === 3 && <FinishDaftar />}
 
                 <div className="flex justify-end">
