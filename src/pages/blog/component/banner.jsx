@@ -1,5 +1,6 @@
 import Slider from "react-slick";
 import LazyImage from "../../../component/image";
+import { NavLink } from "react-router-dom";
 
 const BannerBlog = () => {
     const gambar = [
@@ -36,7 +37,7 @@ const BannerBlog = () => {
                 </span>
                 <div className="flex flex-wrap gap-4">
                     <button className="h-12 font-semibold border-black border-2 p-2.5 bg-cyan-400 hover:bg-cyan-300 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-cyan-300">INFO SEKOLAH</button>
-                    <button className="h-12 font-semibold border-black border-2 p-2.5 bg-yellow-400 hover:bg-yellow-300 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-yellow-300">DAFTAR SEKOLAH</button>
+                    <NavLink to={'/daftar'} className="h-12 font-semibold border-black border-2 p-2.5 bg-yellow-400 hover:bg-yellow-300 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-yellow-300">DAFTAR SEKOLAH</NavLink>
                 </div>
             </div>
             <div className="col-span-2 lg:col-span-1 p-4">

@@ -1,10 +1,6 @@
 import HeaderBlog from "./component/header";
-import BannerBlog from "./component/banner";
-import SambutanBlog from "./component/sambutan";
-import TentangBlog from "./component/tentang";
-import GaleriBlog from "./component/galeri";
-import BeritaBlog from "./component/blog";
 import FooterBlog from "./component/footer";
+import { Outlet } from "react-router-dom";
 
 const BlogIndex = () => {
 
@@ -14,16 +10,7 @@ const BlogIndex = () => {
                 <HeaderBlog />
 
                 <div className="flex flex-col gap-8">
-                    {/* Banner */}
-                    <BannerBlog />
-                    {/* Sambutan */}
-                    <SambutanBlog />
-                    {/* Tentang */}
-                    <TentangBlog />
-                    {/* Galeri */}
-                    <GaleriBlog />
-                    {/* Blog */}
-                    <BeritaBlog />
+                    <Outlet />
                 </div>
 
                 <FooterBlog />
