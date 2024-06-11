@@ -11,7 +11,7 @@ const SambutanBlog = () => {
     return(
         <div id="sambutan" className="grid grid-cols-3 pt-20 place-content-center gap-4">
             <div className="col-span-3 lg:col-span-1 p-8">
-                <figure class="w-full h-96">
+                <figure className="w-full h-96">
                     <LazyImage styleClass={'w-full h-full rounded-lg object-cover border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)]'} src="https://cloudcommercepro.com/wp-content/uploads/2022/06/dummy-customer.jpg" alt="image_kepalaSekolah" />
                 </figure>
             </div>
