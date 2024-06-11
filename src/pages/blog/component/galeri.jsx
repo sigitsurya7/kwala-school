@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import LazyImage from "../../../component/image"
 
 const GaleriBlog = () => {
@@ -41,7 +42,7 @@ const GaleriBlog = () => {
                     }
                 </div>
 
-                <button className="h-12 font-semibold border-black border-2 p-2.5 bg-green-400 hover:bg-green-300 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-green-300">Lihat Selengkapnya</button>
+                <NavLink to={'/menu/galeri'} className="h-12 font-semibold border-black border-2 p-2.5 bg-green-400 hover:bg-green-300 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-green-300">Lihat Selengkapnya</NavLink>
             </div>
         </div>
     )

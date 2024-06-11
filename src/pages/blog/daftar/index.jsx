@@ -101,7 +101,7 @@ const DaftarSekolah = () => {
     const [ state, setState ] = useState(formData)
 
     return(
-        <div className="pt-20 mb-20">
+        <div className="mb-20">
             <div className="flex flex-col gap-4 border-2 border-black my-8 mx-8 p-8 rounded-md shadow-[8px_8px_0px_rgba(0,0,0,1)]">
                 <div className="flex items-center justify-between flex-wrap gap-4">
                     <p className="font-bold border-2 border-black p-1">

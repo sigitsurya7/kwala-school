@@ -26,7 +26,7 @@ const BannerBlog = () => {
     };
 
     return(
-        <div id="home" className="grid grid-cols-2 lg:place-content-center pt-20 h-screen">
+        <div id="home" className="grid grid-cols-2 lg:place-content-center h-screen">
 
             <div className="col-span-2 lg:col-span-1 text-left p-8 flex flex-col flex-wrap justify-center gap-4">
                 <span className="text-4xl lg:text-6xl font-bold uppercase">KWALA SCHOOL.</span>
@@ -45,8 +45,8 @@ const BannerBlog = () => {
                     {
                         gambar.map((item, index) => {
                             return(
-                                <div className="p-4">
-                                    <figure key={index} className="w-full h-full rounded-lg border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)]">
+                                <div key={index} className="p-4">
+                                    <figure className="w-full h-full rounded-lg border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)]">
                                         <LazyImage styleClass={'object-cover w-full h-full'} src={item.link} alt={`banner_Kwala-${index}`} />
                                     </figure>
                                 </div>

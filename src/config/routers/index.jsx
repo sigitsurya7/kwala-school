@@ -9,6 +9,7 @@ import BlogIndex from '../../pages/blog'
 import IndexBlog from '../../pages/blog/component/indexBlog'
 import DaftarSekolah from '../../pages/blog/daftar'
 import NewsBlog from '../../pages/blog/news'
+import GaleriAll from '../../pages/blog/galeri'
 
 const Routers = () => {
     return(
@@ -18,6 +19,7 @@ const Routers = () => {
                     <Route path='/' element={<IndexBlog />} />
                     <Route path='/daftar' element={<DaftarSekolah />} />
                     <Route path='/berita/:News' element={<NewsBlog />} />
+                    <Route path='/menu/galeri' element={<GaleriAll />} />
                 </Route>
             </Routes>
         </Router>

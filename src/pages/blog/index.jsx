@@ -9,7 +9,7 @@ const BlogIndex = () => {
             <div className="bg-base-200 overflow-y-none">
                 <HeaderBlog />
 
-                <div className="flex flex-col gap-8">
+                <div className="flex flex-col gap-8 pt-20">
                     <Outlet />
                 </div>
 

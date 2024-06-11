@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import LazyImage from "../../../component/image"
 
 const BeritaBlog = () => {
@@ -34,26 +34,28 @@ const BeritaBlog = () => {
                         galeri.map((item, index) => {
                             return(
                                 <div key={index} class="w-36 lg:w-80 h-full border-black border-2 rounded-md hover:shadow-[8px_8px_0px_rgba(0,0,0,1)] bg-white">
-                                    <NavLink to={'/berita/Kwala Blog'} class="block cursor-pointer h-full">
-                                        <article class="w-full h-full">
-                                            <figure class="w-full h-1/2 border-black border-b-2">
-                                                <LazyImage styleClass={'w-full h-full object-cover'} src={item.link} alt={`Blog_Kwala-${index}`} />
-                                            </figure>
-                                            <div class="px-6 py-5 text-left h-full">
-                                                <p class="text-base mb-4">May 15th, 2023</p>
-                                                <h1 class="lg:text-[32px] text-[19px] mb-4">Neo Brutallism</h1>
-                                                <p class="text-xs mb-4 line-clamp-4">
-                                                    Neobrutalism is an aesthetic characterized by high contrast
-                                                    elements, bright colors, and bold shapes. It is often used to make
-                                                    a statement, as it is meant to be eye-catching and stand out to
-                                                    the viewer. It is also used in user interface and web design, with
-                                                    features such as vibrant colors and bold shapes. Neobrutalism can
-                                                    also be used in print design, with an example being a bold shape
-                                                    with a vibrant color fill applied to it.
-                                                </p>
-                                                <strong>Read More</strong>
-                                            </div>
-                                        </article>
+                                    <NavLink to={'/berita/kwala blog'}>
+                                        <div className="block cursor-pointer">
+                                            <article class="w-full h-full">
+                                                <figure class="w-full h-1/2 border-black border-b-2">
+                                                    <LazyImage styleClass={'w-full h-full object-cover'} src={item.link} alt={`Blog_Kwala-${index}`} />
+                                                </figure>
+                                                <div class="px-6 py-5 text-left h-full">
+                                                    <p class="text-base mb-4">May 15th, 2023</p>
+                                                    <h1 class="lg:text-[32px] text-[19px] mb-4">Neo Brutallism</h1>
+                                                    <p class="text-xs mb-4 line-clamp-4">
+                                                        Neobrutalism is an aesthetic characterized by high contrast
+                                                        elements, bright colors, and bold shapes. It is often used to make
+                                                        a statement, as it is meant to be eye-catching and stand out to
+                                                        the viewer. It is also used in user interface and web design, with
+                                                        features such as vibrant colors and bold shapes. Neobrutalism can
+                                                        also be used in print design, with an example being a bold shape
+                                                        with a vibrant color fill applied to it.
+                                                    </p>
+                                                    <strong>Read More</strong>
+                                                </div>
+                                            </article>
+                                        </div>
                                     </NavLink>
                                 </div>
                             )
@@ -61,7 +63,7 @@ const BeritaBlog = () => {
                     }
                 </div>
 
-                <button className="h-12 font-semibold border-black border-2 p-2.5 bg-green-400 hover:bg-green-300 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-green-300">Lihat Selengkapnya</button>
+                <NavLink to={'/berita/all'} className="h-12 font-semibold border-black border-2 p-2.5 bg-green-400 hover:bg-green-300 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-green-300">Lihat Selengkapnya</NavLink>
             </div>
 
             <div className="flex flex-col my-20 gap-6 justify-center items-center p-4">
