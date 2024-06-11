@@ -1,5 +1,4 @@
 const Account = ({ formData, setFormData }) => {
-    console.log(formData);
     return(
         <form action="" className="grid grid-cols-1 lg:grid-cols-3 gap-8 my-9">
             <label htmlFor="noHandphone" className="form-control w-full">

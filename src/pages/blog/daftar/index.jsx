@@ -61,7 +61,7 @@ const DaftarSekolah = () => {
                         <tr>
                             <td className="font-bold">Jarak </td>
                             <td>:</td>
-                            <td>{state.jarak ? state.jarak : '-'}</td>
+                            <td>{state.jarak ? state.jarak + ' M' : '-'}</td>
                         </tr>
                         <tr>
                             <td className="font-bold">Cara Berangkat </td>
@@ -122,12 +122,12 @@ const DaftarSekolah = () => {
                 <div className="flex justify-end">
                     <div className="flex justify-between gap-4">
                         {step > 1 && (
-                            <button onClick={prevStep} className="h-12 border-black border-2 p-2.5 bg-green-300 hover:bg-green-200 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-green-300 font-bold">Kembali</button>
+                            <button onClick={prevStep} className="h-12 border-black border-2 p-2.5 rounded-lg bg-red-300 hover:bg-red-200 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-red-300 font-bold">Kembali</button>
                             )}
                         {step < 3 ? (
-                            <button onClick={nextStep} className="h-12 border-black border-2 p-2.5 bg-green-300 hover:bg-green-200 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-green-300 font-bold">Selanjutnya</button>
+                            <button onClick={nextStep} className="h-12 border-black border-2 p-2.5 rounded-lg bg-green-300 hover:bg-green-200 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-green-300 font-bold">Selanjutnya</button>
                             ) : (
-                            <button onClick={() => alert('Form submitted!')} className="h-12 border-black border-2 p-2.5 bg-green-300 hover:bg-green-200 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-green-300 font-bold">Simpan</button>
+                            <button onClick={() => alert('Form submitted!')} className="h-12 border-black border-2 p-2.5 rounded-lg bg-blue-300 hover:bg-blue-200 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-blue-300 font-bold">Simpan</button>
                         )}
                     </div>
                 </div>

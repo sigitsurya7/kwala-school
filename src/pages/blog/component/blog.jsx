@@ -34,7 +34,7 @@ const BeritaBlog = () => {
                         galeri.map((item, index) => {
                             return(
                                 <div key={index} class="w-36 lg:w-80 h-full border-black border-2 rounded-md hover:shadow-[8px_8px_0px_rgba(0,0,0,1)] bg-white">
-                                    <a href="" class="block cursor-pointer">
+                                    <NavLink to={'/berita/Kwala Blog'} class="block cursor-pointer h-full">
                                         <article class="w-full h-full">
                                             <figure class="w-full h-1/2 border-black border-b-2">
                                                 <LazyImage styleClass={'w-full h-full object-cover'} src={item.link} alt={`Blog_Kwala-${index}`} />
@@ -43,18 +43,18 @@ const BeritaBlog = () => {
                                                 <p class="text-base mb-4">May 15th, 2023</p>
                                                 <h1 class="lg:text-[32px] text-[19px] mb-4">Neo Brutallism</h1>
                                                 <p class="text-xs mb-4 line-clamp-4">
-                                                Neobrutalism is an aesthetic characterized by high contrast
-                                                elements, bright colors, and bold shapes. It is often used to make
-                                                a statement, as it is meant to be eye-catching and stand out to
-                                                the viewer. It is also used in user interface and web design, with
-                                                features such as vibrant colors and bold shapes. Neobrutalism can
-                                                also be used in print design, with an example being a bold shape
-                                                with a vibrant color fill applied to it.
+                                                    Neobrutalism is an aesthetic characterized by high contrast
+                                                    elements, bright colors, and bold shapes. It is often used to make
+                                                    a statement, as it is meant to be eye-catching and stand out to
+                                                    the viewer. It is also used in user interface and web design, with
+                                                    features such as vibrant colors and bold shapes. Neobrutalism can
+                                                    also be used in print design, with an example being a bold shape
+                                                    with a vibrant color fill applied to it.
                                                 </p>
                                                 <strong>Read More</strong>
                                             </div>
                                         </article>
-                                    </a>
+                                    </NavLink>
                                 </div>
                             )
                         })

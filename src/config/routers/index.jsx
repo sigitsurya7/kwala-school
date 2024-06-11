@@ -8,6 +8,7 @@ import { Route, BrowserRouter as Router, Routes, Outlet, Navigate } from 'react-
 import BlogIndex from '../../pages/blog'
 import IndexBlog from '../../pages/blog/component/indexBlog'
 import DaftarSekolah from '../../pages/blog/daftar'
+import NewsBlog from '../../pages/blog/news'
 
 const Routers = () => {
     return(
@@ -16,6 +17,7 @@ const Routers = () => {
                 <Route path='/' element={<BlogIndex />}>
                     <Route path='/' element={<IndexBlog />} />
                     <Route path='/daftar' element={<DaftarSekolah />} />
+                    <Route path='/berita/:News' element={<NewsBlog />} />
                 </Route>
             </Routes>
         </Router>

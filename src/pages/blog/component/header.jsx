@@ -1,4 +1,5 @@
 import { FaAlignCenter } from "react-icons/fa"
+import { useLocation } from "react-router-dom"
 
 const HeaderBlog = () => {
     const Menu = [
@@ -23,6 +24,9 @@ const HeaderBlog = () => {
             link: 'berita'
         },
     ]
+
+    const location = useLocation()
+
     return(
         <header className="bg-base-200 h-20 w-full fixed top-0 z-40 shadow-md">
             <div className="w-full h-full m-auto flex justify-between items-center px-5 md:px-24">
@@ -35,7 +39,7 @@ const HeaderBlog = () => {
                             Menu.map((item, index) => {
                                 return(
                                     <li key={index} className="font-bold text-xl underline-offset-4 hover:underline cursor-pointer">
-                                        <a href={`#${item.link}`} className="uppercase">{item.nama}</a>
+                                        <a href={location.pathname == '/' ? '#' + item.link : '/#' + item.link} className="uppercase">{item.nama}</a>
                                     </li>
                                 )
                             })
