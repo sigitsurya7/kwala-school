@@ -13,41 +13,49 @@ const GaleriAll = () => {
 
     const fetchPhotos = async () => {
         try {
-        const res = await axios.get('https://api.pexels.com/v1/search?query=school', {
+          const res = await axios.get('https://api.pexels.com/v1/search?query=school', {
             headers: {
-            Authorization: API_KEY,
+              Authorization: API_KEY,
             },
             params: {
-            per_page: PER_PAGE,
-            page,
+              per_page: PER_PAGE,
+              page,
             },
-        })
-        const newPhotos = res.data.photos
-        setPhotos((prevPhotos) => [...prevPhotos, ...newPhotos])
-        if (newPhotos.length === 0 || newPhotos.length < PER_PAGE || page >= MAX_PAGES) {
+          })
+          const newPhotos = res.data.photos
+          setPhotos((prevPhotos) => [...prevPhotos, ...newPhotos])
+          if (newPhotos.length === 0 || newPhotos.length < PER_PAGE || page >= MAX_PAGES) {
             setHasMore(false)
-        }
+          }
         } catch (error) {
-        console.error('Error fetching photos from Pexels API:', error)
+          console.error('Error fetching photos from Pexels API:', error)
         }
-    }
-
-    useEffect(() => {
-        fetchPhotos()
-    }, [page])
-
-    const handleScroll = () => {
-        if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || !hasMore) return;
-        setPage((prevPage) => prevPage + 1);
-    };
+      }
     
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [hasMore]);
+      useEffect(() => {
+        if (page <= MAX_PAGES) {
+          fetchPhotos()
+        }
+      }, [page])
+    
+      const handleScroll = () => {
+        if (!hasMore) return
+    
+        const scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop
+        const scrollHeight = (document.documentElement && document.documentElement.scrollHeight) || document.body.scrollHeight
+    
+        if (window.innerHeight + scrollTop >= scrollHeight - 5) {
+          setPage((prevPage) => prevPage + 1)
+        }
+      }
+    
+      useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+      }, [hasMore])
 
     return(
-        <div className="flex justify-center items-center place-content-center">
+        <div className="flex flex-col justify-center items-center place-content-center gap-4">
             <div className="grid grid-cols-2 lg:grid-cols-5 p-4 gap-2 w-full">
                 {
                     photos.map((item, index) => {
@@ -58,8 +66,8 @@ const GaleriAll = () => {
                         )
                     })
                 }
-                {!hasMore && <p className="text-center text-gray-500">No more photos to load</p>}
             </div>
+            {!hasMore && <p className="text-center text-gray-500 mb-8">Tidak ada foto untuk di tampilkan</p>}
         </div>
     )
 }

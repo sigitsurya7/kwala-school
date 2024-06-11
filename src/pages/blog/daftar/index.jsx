@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormBiodata from "./form/formBiodata";
 import Account from "./form/akun";
+import Prompt from "../../../component/dialog";
 
 const formData = {
     namaLengkap: '',
@@ -19,6 +20,12 @@ const formData = {
 
 
 const DaftarSekolah = () => {
+    const [ state, setState ] = useState(formData)
+    const [nextDisabled, setNextDisabled] = useState(true);
+    const [step, setStep] = useState(1);
+    const [errorVisible, setErrorVisible] = useState(false);
+    const [successVisible, setsuccessVisible] = useState(false);
+
     const FinishDaftar = () => {
         return(
             <>
@@ -94,11 +101,24 @@ const DaftarSekolah = () => {
         )
     }
 
-    const [step, setStep] = useState(1);
-    const nextStep = () => setStep(step + 1);
-    const prevStep = () => setStep(step - 1);
+    const prevStep = () => setStep(step - 1)
 
-    const [ state, setState ] = useState(formData)
+    const nextStep = () => {
+        if (nextDisabled) {
+          setErrorVisible(true);
+        } else {
+          setErrorVisible(false);
+          setStep(step + 1);
+        }
+      };
+    
+      useEffect(() => {
+        if (step === 2) {
+          const isAccountValid = state.noHandphone !== '' && state.email !== '' && state.password !== '';
+          setNextDisabled(!isAccountValid);
+        }
+      }, [state, step]);
+
 
     return(
         <div className="mb-20">
@@ -115,8 +135,8 @@ const DaftarSekolah = () => {
 
                 <p className="font-bold text-xl text-center uppercase">{step == 1 ? 'biodata' : step == 2 ? 'akun' : 'simpan' }</p>
 
-                {step === 1 && <FormBiodata formData={state} setFormData={setState} />}
-                {step === 2 && <Account formData={state} setFormData={setState} />}
+                {step === 1 && <FormBiodata formData={state} setFormData={setState} setNextDisabled={setNextDisabled} />}
+                {step === 2 && <Account formData={state} setFormData={setState} setNextDisabled={setNextDisabled} />}
                 {step === 3 && <FinishDaftar />}
 
                 <div className="flex justify-end">
@@ -127,11 +147,29 @@ const DaftarSekolah = () => {
                         {step < 3 ? (
                             <button onClick={nextStep} className="h-12 border-black border-2 p-2.5 rounded-lg bg-green-300 hover:bg-green-200 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-green-300 font-bold">Selanjutnya</button>
                             ) : (
-                            <button onClick={() => alert('Form submitted!')} className="h-12 border-black border-2 p-2.5 rounded-lg bg-blue-300 hover:bg-blue-200 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-blue-300 font-bold">Simpan</button>
+                            <button onClick={() => setsuccessVisible(true)} className="h-12 border-black border-2 p-2.5 rounded-lg bg-blue-300 hover:bg-blue-200 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-blue-300 font-bold">Simpan</button>
                         )}
                     </div>
                 </div>
             </div>
+
+            <Prompt
+                title="Error"
+                message="Ada Data yang belum di isi"
+                visible={errorVisible}
+                onClose={() => setErrorVisible(false)}
+                // showButton={true}
+                icon={'error'}
+            />
+
+            <Prompt
+                title="Pendaftaran Berhasil"
+                message={`Harap simpan data kamu ya... <br /> <b>Email</b> : ${state.email} <br /> <b>Password</b> : ${state.password}`}
+                visible={successVisible}
+                onClose={() => setsuccessVisible(false)}
+                // showButton={true}
+                icon={'success'}
+            />
         </div>
     )
 }

@@ -1,4 +1,12 @@
-const Account = ({ formData, setFormData }) => {
+import { useEffect } from "react";
+
+const Account = ({ formData, setFormData, setNextDisabled }) => {
+    useEffect(() => {
+        const isFormValid = Object.entries(formData).every(([key, field]) => {
+            return field !== '' && field !== null && field !== undefined;
+        });
+        setNextDisabled(!isFormValid);
+    }, [formData, setNextDisabled]);
     return(
         <form action="" className="grid grid-cols-1 lg:grid-cols-3 gap-8 my-9">
             <label htmlFor="noHandphone" className="form-control w-full">

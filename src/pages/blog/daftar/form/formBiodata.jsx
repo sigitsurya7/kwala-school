@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 import Select from 'react-select'
-import { get } from '../../../../config/middleware/hooks/gateway'
 import axios from 'axios'
 
-const FormBiodata = ( { formData, setFormData } ) => {
+const FormBiodata = ( { formData, setFormData, setNextDisabled } ) => {
 
     const [ state, setState ] = useState([])
 
@@ -16,6 +15,16 @@ const FormBiodata = ( { formData, setFormData } ) => {
             setState(options);
         })
     }
+
+    useEffect(() => {
+        const isFormValid = Object.entries(formData).every(([key, field]) => {
+            if (['noHandphone', 'email', 'password'].includes(key)) {
+              return true;
+            }
+            return field !== '' && field !== null && field !== undefined;
+        });
+        setNextDisabled(!isFormValid);
+    }, [formData, setNextDisabled]);
 
     useEffect(() => {
         getDataSekolah()
