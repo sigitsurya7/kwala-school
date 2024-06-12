@@ -40,7 +40,7 @@ const BannerBlog = () => {
                     <NavLink to={'/daftar'} className="h-12 font-semibold border-black border-2 p-2.5 bg-yellow-400 hover:bg-yellow-300 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-yellow-300">DAFTAR SEKOLAH</NavLink>
                 </div>
             </div>
-            <div className="col-span-2 lg:col-span-1 p-4">
+            <div className="col-span-2 lg:col-span-1">
                 <Slider {...settings}>
                     {
                         gambar.map((item, index) => {

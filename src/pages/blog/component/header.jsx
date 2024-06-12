@@ -44,6 +44,10 @@ const HeaderBlog = () => {
                                 )
                             })
                         }
+
+                        <div className="font-bold text-lg rounded-lg border-4 border-black hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] bg-green-300 p-2.5 cursor-pointer">
+                            <a href='' className="uppercase">login</a>
+                        </div>
                     </ul>
                 </nav>
                 <div className="md:hidden">
@@ -63,6 +67,10 @@ const HeaderBlog = () => {
                                     )
                                 })
                             }
+
+                            <div className="font-bold btn bg-green-300 text-xl underline-offset-4 hover:underline cursor-pointer">
+                                <a href='' className="uppercase">login</a>
+                            </div>
                         </ul>
                     </div>
                 </div>

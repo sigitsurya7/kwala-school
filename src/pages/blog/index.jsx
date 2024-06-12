@@ -6,7 +6,7 @@ const BlogIndex = () => {
 
     return(
         <>
-            <div className="bg-base-200 overflow-y-none">
+            <div className="bg-base-200">
                 <HeaderBlog />
 
                 <div className="flex flex-col gap-8 pt-20">

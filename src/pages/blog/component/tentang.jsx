@@ -116,7 +116,7 @@ const TentangBlog = () => {
             <div className="grid grid-cols-3 items-center">
                 <div className="col-span-3 lg:col-span-1 p-8">
                     <figure className="w-full h-96">
-                        <LazyImage styleClass={'w-full h-full rounded-lg border-4 border-black object-cover shadow-[8px_8px_0px_rgba(0,0,0,1)]'} src={'https://images.unsplash.com/photo-1613896527026-f195d5c818ed?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2Nob29sJTIwYnVpbGRpbmd8ZW58MHx8MHx8fDA%3D'} />
+                        <LazyImage alt={'image_sekolah'} styleClass={'w-full h-full rounded-lg border-4 border-black object-cover shadow-[8px_8px_0px_rgba(0,0,0,1)]'} src={'https://images.unsplash.com/photo-1613896527026-f195d5c818ed?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2Nob29sJTIwYnVpbGRpbmd8ZW58MHx8MHx8fDA%3D'} />
                     </figure>
                 </div>
 
