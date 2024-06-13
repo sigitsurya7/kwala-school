@@ -15,7 +15,7 @@ const AuthLayout = () => {
             </div>
             <div className="col-span-3 lg:col-span-1">
                 <div className="flex justify-center items-center h-full p-4">
-                    <div className="w-full h-max p-8 rounded-lg border-4 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+                    <div className="w-full h-max p-8 rounded-lg lg:border-4 lg:border-black lg:shadow-[4px_4px_0px_rgba(0,0,0,1)]">
                         <p className="w-max text-center font-bold border-4 border-black p-2 text-black"><span className="bg-black text-white p-4">KWALA</span> {login == 'ppdblogin' ? 'LOGIN PPDB' : 'LOGIN'}</p>
 
                         <div>
