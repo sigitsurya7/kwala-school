@@ -30,7 +30,7 @@ const GaleriAll = () => {
         } catch (error) {
           console.error('Error fetching photos from Pexels API:', error)
         }
-      }
+    }
     
       useEffect(() => {
         if (page <= MAX_PAGES) {

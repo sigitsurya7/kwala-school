@@ -10,6 +10,8 @@ import IndexBlog from '../../pages/blog/component/indexBlog'
 import DaftarSekolah from '../../pages/blog/daftar'
 import NewsBlog from '../../pages/blog/news'
 import GaleriAll from '../../pages/blog/galeri'
+import AuthLayout from '../../layout/auth'
+import LoginPages from '../../pages/authPages/login'
 
 const Routers = () => {
     return(
@@ -20,6 +22,10 @@ const Routers = () => {
                     <Route path='/daftar' element={<DaftarSekolah />} />
                     <Route path='/berita/:News' element={<NewsBlog />} />
                     <Route path='/menu/galeri' element={<GaleriAll />} />
+                </Route>
+
+                <Route path='/auth' element={<AuthLayout />}>
+                    <Route path='/auth/:login' element={<LoginPages />} />
                 </Route>
             </Routes>
         </Router>
