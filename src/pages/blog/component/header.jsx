@@ -61,7 +61,7 @@ const HeaderBlog = () => {
                             {
                                 Menu.map((item, index) => {
                                     return(
-                                        <li key={index} className="font-bold text-xl underline-offset-4 hover:underline cursor-pointer">
+                                        <li key={index} className="font-bold text-xl bg-base-200 underline-offset-4 hover:underline cursor-pointer">
                                             <NavLink to={`#${item.link}`} className="uppercase">{item.nama}</NavLink>
                                         </li>
                                     )

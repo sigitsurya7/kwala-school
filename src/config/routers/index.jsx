@@ -12,6 +12,7 @@ import NewsBlog from '../../pages/blog/news'
 import GaleriAll from '../../pages/blog/galeri'
 import AuthLayout from '../../layout/auth'
 import LoginPages from '../../pages/authPages/login'
+import Error404 from '../../pages/error/error404'
 
 const Routers = () => {
     return(
@@ -27,6 +28,8 @@ const Routers = () => {
                 <Route path='/auth' element={<AuthLayout />}>
                     <Route path='/auth/:login' element={<LoginPages />} />
                 </Route>
+
+                <Route path='*' element={<Error404 />} />
             </Routes>
         </Router>
     )
